@@ -107,10 +107,6 @@ struct GenericDialect: SQLDialect {
     }
 
     var supportsDropBehaviour: Bool = false
-    
-    var supportsAutoIncrementUsingDefaultFunction: Bool = false
 
-    var autoIncrementFunction: SQLExpression {
-        return SQLRaw("NEXTUNIQUE")
-    }
+    var autoIncrementFunction: SQLExpression? = nil
 }
